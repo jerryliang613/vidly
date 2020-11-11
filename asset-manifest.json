@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/vidly/static/css/main.5f361e03.chunk.css",
-    "main.js": "/vidly/static/js/main.f92c3164.chunk.js",
-    "main.js.map": "/vidly/static/js/main.f92c3164.chunk.js.map",
+    "main.js": "/vidly/static/js/main.d23551b5.chunk.js",
+    "main.js.map": "/vidly/static/js/main.d23551b5.chunk.js.map",
     "runtime-main.js": "/vidly/static/js/runtime-main.f8720289.js",
     "runtime-main.js.map": "/vidly/static/js/runtime-main.f8720289.js.map",
     "static/css/2.efd6b4be.chunk.css": "/vidly/static/css/2.efd6b4be.chunk.css",
     "static/js/2.2f238b40.chunk.js": "/vidly/static/js/2.2f238b40.chunk.js",
     "static/js/2.2f238b40.chunk.js.map": "/vidly/static/js/2.2f238b40.chunk.js.map",
     "index.html": "/vidly/index.html",
-    "precache-manifest.3837fbc45e8f415a960e710228791840.js": "/vidly/precache-manifest.3837fbc45e8f415a960e710228791840.js",
+    "precache-manifest.0c3a9770f14f0f35567e464d1895248e.js": "/vidly/precache-manifest.0c3a9770f14f0f35567e464d1895248e.js",
     "service-worker.js": "/vidly/service-worker.js",
     "static/css/2.efd6b4be.chunk.css.map": "/vidly/static/css/2.efd6b4be.chunk.css.map",
     "static/css/main.5f361e03.chunk.css.map": "/vidly/static/css/main.5f361e03.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.efd6b4be.chunk.css",
     "static/js/2.2f238b40.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.f92c3164.chunk.js"
+    "static/js/main.d23551b5.chunk.js"
   ]
 }
