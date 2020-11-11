@@ -42,6 +42,7 @@ class App extends Component {
           <ProtectedRoute path = '/movies/new' component = {MovieForm}/>
           <Route path = '/movies/:movieid' render = {props => <MovieForm {...props} user = {user} />} />
           <Route path = '/movies' render = {props=><Movies {...props} user= {user} />} />
+          <Route path = '/vidly' exact render = {props=><Movies {...props} user= {user} />} />
           <Route path = '/' exact render = {props=><Movies {...props} user= {user} />} />
           <Route path = '/notfound' component = {notFound} />
           <Redirect to ='/notfound' />

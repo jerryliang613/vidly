@@ -25,7 +25,7 @@
     "react-toastify": "^6.0.8"
   },
   "scripts": {
-    "redeploy": "react-scripts build",
+    "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
