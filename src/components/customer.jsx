@@ -1,8 +1,7 @@
 import React from 'react';
-import queryString from 'query-string';
 
 const Customers = ({history, location}) => {
-    const {name, city} = queryString.parse(location.search);
+
     return ( 
         <div className="content">
             <h1>Customers</h1>
