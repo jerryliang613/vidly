@@ -19,7 +19,7 @@ class LoginForm extends Form {
             const {state} = this.props.location;
             const {data} = this.state;
             await login(data.username, data.password);
-            window.location = state? state.from.pathname: '/';
+            window.location = state? state.from.pathname: '/vidly';
         }catch(ex)
         {
             console.log(ex);
@@ -31,7 +31,7 @@ class LoginForm extends Form {
         }
     }
     render(){
-        if(getCurrentUser()) return <Redirect to ='/' />
+        if(getCurrentUser()) return <Redirect to ='/vidly' />
         return ( 
             <div>
                 <form onSubmit = {this.handleSubmit} style = {this.styles}>

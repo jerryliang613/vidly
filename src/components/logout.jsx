@@ -3,7 +3,7 @@ import {logout} from '../services/authServices';
 class Logout extends Component {
     componentDidMount() {
         logout();
-        window.location = '/';
+        window.location = '/vidly';
     }
     
     render(){
