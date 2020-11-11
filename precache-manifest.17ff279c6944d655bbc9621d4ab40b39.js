@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e58fc017110e2ba99a621b6a0197a1d3",
+    "revision": "cb6b38879b8ce0a564f913314fb4aeeb",
     "url": "/vidly/index.html"
   },
   {
-    "revision": "8dda2d17dc64181eeb87",
+    "revision": "3403952291fdc3e7bf5d",
     "url": "/vidly/static/css/2.efd6b4be.chunk.css"
   },
   {
-    "revision": "0e893441a49a7fb4e9f5",
+    "revision": "8cf0370fa244dc4a8153",
     "url": "/vidly/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "8dda2d17dc64181eeb87",
-    "url": "/vidly/static/js/2.2f238b40.chunk.js"
+    "revision": "3403952291fdc3e7bf5d",
+    "url": "/vidly/static/js/2.4cd9e5b6.chunk.js"
   },
   {
     "revision": "c560b744118e776c5a9fe14e0546e12a",
-    "url": "/vidly/static/js/2.2f238b40.chunk.js.LICENSE.txt"
+    "url": "/vidly/static/js/2.4cd9e5b6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0e893441a49a7fb4e9f5",
-    "url": "/vidly/static/js/main.d23551b5.chunk.js"
+    "revision": "8cf0370fa244dc4a8153",
+    "url": "/vidly/static/js/main.ad921af1.chunk.js"
   },
   {
     "revision": "cb388922157c702ba0d5",
