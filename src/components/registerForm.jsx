@@ -20,7 +20,7 @@ class Register extends Form {
          try{
              const {headers} = await register(this.state.data);
              localStorage.setItem('token', headers["x-auth-token"]);
-             window.location = '/';
+             window.location = '/vidly';
          }catch(ex)
          {
              if(ex.response&&ex.response.status===400) {
