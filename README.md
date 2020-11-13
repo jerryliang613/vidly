@@ -2,7 +2,7 @@
 
 frontend: bootstrap/reactjs </br>
 backend: nodejs/mongodb/heroku</br>
-
+https://jerryliang613.github.io/vidly</br>
 admin account:</br>
 username: admin@jerryliang.co</br>
 password: admin</br>
