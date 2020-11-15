@@ -8,6 +8,7 @@ import ListGenres from './common/listGenres';
 import * as config from './common/config';
 import MoviesTable from './moviesTable';
 import SearchBox from './common/searchbox';
+import '../css/style.css';
 
 class Movies extends Component {
     state = { movies:[],
@@ -113,6 +114,7 @@ class Movies extends Component {
         this.setState({movies, deletedMovies: []});
 
     }
+
     render() { 
         const {movies: allMovies, currentpage, genres, selectedgenre, sortpath, searchQuery, deletedMovies, deleteall} = this.state;
         const filteredMovies = this.filterMovie(allMovies, selectedgenre, sortpath);
@@ -120,9 +122,19 @@ class Movies extends Component {
         const itemCount = filteredMovies.length;
         const movies = this.paginate(filteredMovies,currentpage);
         const {user} = this.props;
+
         return ( 
-                <div className="row">
-                <div className="col-2 my-3">
+
+                (allMovies.length===0||genres.length===0)?
+
+                <div style = {{ height:'100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}} >
+                <div className="spinner-border text-primary " style = {{width: '4rem', height: '4rem'}} role="status" >
+                <span className="sr-only">Loading...</span>
+                </div>
+                </div>
+
+                :<div className="row">
+                <div className="col-md-2 my-3">
                     <ListGenres 
                     genres = {genres}
                     selectedgenre = {selectedgenre}
@@ -131,33 +143,34 @@ class Movies extends Component {
                 </div>
 
                 <div className="col">
-                    {user&&<Link to = '/movies/new' className = 'btn btn-primary' style = {{marginTop: '20px', marginBottom: '20px'}}>New Movie</Link>}
-                    {itemCount===0?<p>There are no movies in database</p>:<p>Showing {itemCount} movie(s) in database</p>}
-                    <SearchBox 
-                    value = {searchQuery}
-                    onChange = {this.handleSearch}/>
-                    {(itemCount!==0)&&<MoviesTable 
-                    itemcount = {itemCount}
-                    movies = {movies}
-                    onDelete = {this.handleDelete}
-                    onLike = {this.handleLike}
-                    onSort = {this.handleSort}
-                    sortpath = {sortpath}
-                    onCheck = {this.handleCheck}
-                    deletedmovies = {deletedMovies}
-                    onDeleteAll = {this.handelDeleteAll}
-                    deleteall = {deleteall}
-                    onDeleteMulti = {this.handleDeleteMulti}
-                    user = {user}
-                    />}
-               
-                    {(itemCount!==0)&&<Pagination 
-                    pagecount = {totalPage}
-                    currentpage = {currentpage}
-                    onClick = {this.handlePageChang}
-                    />}
+                {user&&<Link to = '/movies/new' className = 'btn btn-primary' style = {{marginTop: '20px', marginBottom: '20px'}}>New Movie</Link>}
+                {itemCount===0?<p>There are no movies in database</p>:<p>Showing {itemCount} movie(s) in database</p>}
+                <SearchBox 
+                value = {searchQuery}
+                onChange = {this.handleSearch}/>
+                {(itemCount!==0)&&<MoviesTable 
+                itemcount = {itemCount}
+                movies = {movies}
+                onDelete = {this.handleDelete}
+                onLike = {this.handleLike}
+                onSort = {this.handleSort}
+                sortpath = {sortpath}
+                onCheck = {this.handleCheck}
+                deletedmovies = {deletedMovies}
+                onDeleteAll = {this.handelDeleteAll}
+                deleteall = {deleteall}
+                onDeleteMulti = {this.handleDeleteMulti}
+                user = {user}
+                />}
+            
+                {(itemCount!==0)&&<Pagination 
+                pagecount = {totalPage}
+                currentpage = {currentpage}
+                onClick = {this.handlePageChang}
+                />}
+            </div>
                 </div>
-                </div>
+
          );
     }
 }
