@@ -32,13 +32,8 @@ class App extends Component {
           <Route path = '/login' component = {LoginForm} />
           <Route path = '/logout' component = {Logout} />
           <Route path = '/register' component = {Register} />
-          <Route path = '/customers' component = {Customers} />
-          <Route path = '/rentals' component = {Rentals} />
-          {/* <Route path = '/movies/new' render = {props =>
-            {if(!user) return <Redirect to ='/login' />
-            return <MovieForm {...props} />
-          }
-          } /> */}
+          <ProtectedRoute path = '/customers' component = {Customers} />
+          <ProtectedRoute path = '/rentals' component = {Rentals} />
           <ProtectedRoute path = '/movies/new' component = {MovieForm}/>
           <Route path = '/movies/:movieid' render = {props => <MovieForm {...props} user = {user} />} />
           <Route path = '/movies' render = {props=><Movies {...props} user= {user} />} />

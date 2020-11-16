@@ -8,7 +8,6 @@ import ListGenres from './common/listGenres';
 import * as config from './common/config';
 import MoviesTable from './moviesTable';
 import SearchBox from './common/searchbox';
-import '../css/style.css';
 
 class Movies extends Component {
     state = { movies:[],

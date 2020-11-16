@@ -12,8 +12,13 @@ const NavBar = props => {
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
                 <Link className="nav-item nav-link" to ="/movies">Movies</Link>
-                <Link className="nav-item nav-link" to ="/customers">Customers</Link>
-                <Link className = 'nav-item nav-link' to='rentals'>Rentals</Link>
+                {user&&
+                <React.Fragment>
+
+                    <Link className="nav-item nav-link" to ="/customers">Customers</Link>
+                    <Link className = 'nav-item nav-link' to='rentals'>Rentals</Link>
+                </React.Fragment>
+                }
                 {user&&
                 <React.Fragment>
                 <Link className="nav-item nav-link" to ="/profile">{user.name}</Link>

@@ -39,6 +39,10 @@ class LoginForm extends Form {
                     {this.renderInput('username', 'Username')}
                     {this.renderInput('password', 'Password', 'password')}
                     {this.renderButton('Submit')}
+                <div class="alert alert-light mt-3" role="alert">
+                    <li style = {{listStyleType: 'none'}}>admin@jerryliang.co</li>
+                    <li style = {{listStyleType: 'none'}}>admin</li>
+                </div>
                 </form>
             </div>
          );
