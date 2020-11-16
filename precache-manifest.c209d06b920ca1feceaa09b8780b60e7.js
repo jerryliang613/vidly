@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bee81d89c242d0dfe80f03ed1844d2df",
+    "revision": "37a57bdd5fac12d1426e9afab812eeb1",
     "url": "/vidly/index.html"
   },
   {
-    "revision": "27a543bfd8de82e07224",
+    "revision": "c4e62ca946a604ec609b",
     "url": "/vidly/static/css/2.efd6b4be.chunk.css"
   },
   {
-    "revision": "5a0ec39bc8d643039627",
-    "url": "/vidly/static/css/main.dd5894fa.chunk.css"
+    "revision": "ed2bd791a75727a116ab",
+    "url": "/vidly/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "27a543bfd8de82e07224",
-    "url": "/vidly/static/js/2.23f25c39.chunk.js"
+    "revision": "c4e62ca946a604ec609b",
+    "url": "/vidly/static/js/2.3fd94af4.chunk.js"
   },
   {
     "revision": "c560b744118e776c5a9fe14e0546e12a",
-    "url": "/vidly/static/js/2.23f25c39.chunk.js.LICENSE.txt"
+    "url": "/vidly/static/js/2.3fd94af4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5a0ec39bc8d643039627",
-    "url": "/vidly/static/js/main.a63ad5c8.chunk.js"
+    "revision": "ed2bd791a75727a116ab",
+    "url": "/vidly/static/js/main.0e0b2c25.chunk.js"
   },
   {
     "revision": "cb388922157c702ba0d5",
