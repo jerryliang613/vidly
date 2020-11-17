@@ -17,13 +17,17 @@ class Movies extends Component {
             sortpath: {path: 'title', order: 'asc'},
             searchQuery: '',
             deletedMovies: [],
-            deleteall: false,};
+            deleteall: false,
+            loading: true};
             
 
     async componentDidMount(){
         const {data: movies} = await getMovies();
         const {data} = await getGenres();
         this.setState({movies, genres: [{_id: '', name: 'All Genres'},...data]});
+        setTimeout(() => {
+            this.setState({loading:false})
+        }, 10000);
     }
     handleDelete = async movieid=>{
         const originalMovies = this.state.movies;
@@ -115,7 +119,7 @@ class Movies extends Component {
     }
 
     render() { 
-        const {movies: allMovies, currentpage, genres, selectedgenre, sortpath, searchQuery, deletedMovies, deleteall} = this.state;
+        const {movies: allMovies, currentpage, genres, selectedgenre, sortpath, searchQuery, deletedMovies, deleteall,loading} = this.state;
         const filteredMovies = this.filterMovie(allMovies, selectedgenre, sortpath);
         const totalPage = this.getPageCount(filteredMovies);
         const itemCount = filteredMovies.length;
@@ -124,7 +128,7 @@ class Movies extends Component {
 
         return ( 
 
-                (allMovies.length===0||genres.length===0)?
+                (allMovies.length===0||genres.length===0)&&loading?
 
                 <div style = {{ height:'100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}} >
                 <div className="spinner-border text-primary " style = {{width: '4rem', height: '4rem'}} role="status" >
