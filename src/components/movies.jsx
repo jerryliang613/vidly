@@ -25,10 +25,14 @@ class Movies extends Component {
         const {data: movies} = await getMovies();
         const {data} = await getGenres();
         this.setState({movies, genres: [{_id: '', name: 'All Genres'},...data]});
-        setTimeout(() => {
+        this.timerId = setTimeout(() => {
             this.setState({loading:false})
         }, 10000);
     }
+    componentWillUnmount(){
+        clearTimeout(this.timerId);
+    }
+
     handleDelete = async movieid=>{
         const originalMovies = this.state.movies;
         const movies = originalMovies.filter(movie => movie._id!== movieid);

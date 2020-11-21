@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GroupSelect = ({items, label, error, onChange, disabled, ...rest}) => {
+const GroupSelect = ({items,selectedItem, label, error, onChange, disabled, ...rest}) => {
     return ( 
         
         <div className="form-group">
@@ -10,12 +10,13 @@ const GroupSelect = ({items, label, error, onChange, disabled, ...rest}) => {
         id="inputGroupSelect"
         onChange = {onChange}
         disabled = {disabled}
+        value = {selectedItem}
         {...rest}>
-            <option value=''>Choose...</option>
+            {!selectedItem&&<option value=''>Choose...</option>}
             {items.map(item=> <option
             key = {item._id}
             value = {item._id}
-            >{item.name}</option>)}
+             >{item.name}</option>)}
         </select>
         {error&& <div className="alert alert-danger">{error}</div> }
         </div>        

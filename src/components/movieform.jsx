@@ -14,6 +14,8 @@ class MovieForm extends Form {
             numberInStock: '',
             dailyRentalRate: ''
         },
+        genres: [],
+        selectedGenre: '',
         errors: {},
     }
     schema = {
@@ -23,7 +25,6 @@ class MovieForm extends Form {
         numberInStock:Joi.number().min(0).required().label('Stock'),
         dailyRentalRate:Joi.number().min(1).max(10).required().label('Rate'),
     }
-    genres = [];
     doSubmit=async ()=>{
         try {
             await saveMovie(this.state.data);
@@ -35,24 +36,29 @@ class MovieForm extends Form {
     }
     async componentDidMount(){
         const {movieid} = this.props.match.params;
-        const {data: result} = await getGenres();
-        this.genres = result;
+        const {data} = await getGenres();
+        this.setState({genres: [...data]});
+        
         if(movieid) {
             const {data:result} = {...await getMovie(movieid)};
             let data = {...result};
             if(Object.keys(data).length===0) return this.props.history.replace('/notfound'); 
             data.genreId = data.genre._id;
+            this.setState({selectedGenre:data.genreId})
             delete data.genre;
             this.setState({data });
         }
+            
+        
     }
     render() { 
         const {user} = this.props;
+        const {genres, selectedGenre} = this.state;
         return ( 
             <form onSubmit = {this.handleSubmit} style = {this.styles}>
                 <h1>Movie Form</h1>
                 {this.renderInput('title', 'Title','text',!user)}
-                {this.renderGroupSelect(this.genres,'genreId','Genre', !user)}
+                {this.renderGroupSelect(genres, selectedGenre,'genreId','Genre', !user)}
                 {this.renderInput('numberInStock', 'Stock','text',!user)}
                 {this.renderInput('dailyRentalRate', 'Rate','text',!user)}
                 {user&&this.renderButton('Save')}

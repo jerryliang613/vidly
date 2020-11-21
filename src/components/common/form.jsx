@@ -62,7 +62,7 @@ class Form extends Component {
         readOnly = {readonly}
         />
     }
-    renderGroupSelect = (items, name, label, disabled) =>{
+    renderGroupSelect = (items,selectedItem, name, label, disabled) =>{
         return <GroupSelect 
         items = {items}
         name = {name}
@@ -71,6 +71,7 @@ class Form extends Component {
         error= {this.state.errors[name]}
         onChange = {this.handleChange}
         disabled = {disabled}
+        selectedItem = {selectedItem}
         />
     }
 }
