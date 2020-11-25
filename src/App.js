@@ -5,18 +5,15 @@ import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NavBar from './components/navbar';
 import Movies from './components/movies';
-import Customers from './components/customers';
+import Customers from './components/customer';
 import Rentals from './components/rentals';
 import notFound from './components/notfound';
 import MovieForm from './components/movieform';
 import LoginForm from './components/loginform';
 import Register from './components/registerForm';
 import Logout from './components/logout';
-import CustomerForm from './components/customerForm';
-import CustomerRegister from './components/customerRegister';
 import { getCurrentUser } from './services/authServices';
 import ProtectedRoute from './components/common/protectedRoute';
-
 
 class App extends Component {
   state = {};
@@ -34,9 +31,7 @@ class App extends Component {
         <Switch>
           <Route path = '/login' component = {LoginForm} />
           <Route path = '/logout' component = {Logout} />
-          <ProtectedRoute path = '/register' component = {Register} />
-          <ProtectedRoute path = '/customers/new' component = {CustomerRegister} />
-          <ProtectedRoute path = '/customers/:id' component = {CustomerForm} />
+          <Route path = '/register' component = {Register} />
           <ProtectedRoute path = '/customers' component = {Customers} />
           <ProtectedRoute path = '/rentals' component = {Rentals} />
           <ProtectedRoute path = '/movies/new' component = {MovieForm}/>
